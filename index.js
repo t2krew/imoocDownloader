@@ -1,9 +1,5 @@
 'use strict';
 
-let utils = require('./lib/utils');
-let config = require('./config');
-
-
 let Crawler = require('./lib/main');
 
 let worker = new Crawler({
