@@ -7,8 +7,13 @@ imoocDownloader 用来爬取慕课网上指定课程id视频
 
 ###Installation
 
-    git clone https://github.com/webbought/imoocDownloader.git
+```
+git clone https://github.com/webbought/imoocDownloader.git
 
+cd imoocDownloader 
+
+npm install
+```
 
 ###example
 ```
