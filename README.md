@@ -35,10 +35,8 @@ worker.run();
 
 #####new Crawler(object)
 
-object 配置信息
+*    object 配置信息
 
-属性有timeout、videoDir、target
-
-timeout 超时时间(分钟)
-videoDir  视频下载目录
-target  慕课网课程id数组（支持单个id字符串格式）
+    *    timeout    超时时间(分钟)
+    *    videoDir   视频下载目录
+    *    target     慕课网课程id数组（支持单个id字符串格式）
