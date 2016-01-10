@@ -12,6 +12,7 @@
     "video",
     "stream"
   ],
+  "repository" : "https://github.com/webbought/imoocDownloader.git",
   "author": "krew",
   "license": "ISC",
   "dependencies": {
