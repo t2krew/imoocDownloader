@@ -31,7 +31,8 @@ let worker = new Crawler({
 worker.run();
 ```
 
-###Class: Crawler
+### 用法
+####Class: Crawler
 
 #####new Crawler(object)
 
