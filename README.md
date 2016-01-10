@@ -39,5 +39,5 @@ worker.run();
 *    object 配置信息
 
     *    timeout    超时时间(分钟)
-    *    videoDir   视频下载目录
+    *    videoDir   视频下载目录(支持绝对路径、相对路径)
     *    target     慕课网课程id数组（支持单个id字符串格式）
