@@ -16,7 +16,7 @@ npm install
 ```
 
 ###example
-```
+```javascript
 'use strict';
 
 let Crawler = require('./lib/main');
