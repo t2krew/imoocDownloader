@@ -12,7 +12,7 @@
     "video",
     "stream"
   ],
-  "repository" : "https://github.com/webbought/imoocDownloader.git",
+  "repository": "https://github.com/webbought/imoocDownloader.git",
   "author": "krew",
   "license": "ISC",
   "dependencies": {
@@ -20,6 +20,7 @@
     "colors": "^1.1.2",
     "debug": "^2.2.0",
     "lodash": "^3.10.1",
-    "request": "^2.67.0"
+    "request": "^2.67.0",
+    "urlencode": "^1.1.0"
   }
 }
