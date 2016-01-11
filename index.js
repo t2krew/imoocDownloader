@@ -35,6 +35,7 @@ if(args.length <=2 ){
 			console.log('缺少关键词参数');
 		}else{
 			let searchLink = searchUrl + urlencode(cmds[3]);
+			console.log(colors.magenta('Searching course list about: " ' + cmds[3] + ' "...'));
 			let worker = new Crawler({
 			    timeout : config.timeout
 			});
@@ -49,7 +50,7 @@ if(args.length <=2 ){
 				console.log('课程ID格式有误，应该为数字格式');
 			}
 			let chapterLink = chapterUrl + cmds[3];
-			console.log(chapterLink)
+			console.log(colors.magenta('Reading course list from: ' + chapterLink + '...'));
 			let worker = new Crawler({
 			    timeout : config.timeout
 			});
