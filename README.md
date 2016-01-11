@@ -45,11 +45,19 @@ node index.js <command> <arguments>
 ```shell
 node index.js --search node
 ```
+![search][1]
 
 ```shell
 node index.js --list 434
 ```
+![list][2]
 
 ```shell
 node index.js --download 434
 ```
+![download][3]
+
+
+[1]: /url/to/img.jpg "search"
+[2]: /url/to/img.jpg "list"
+[3]: /url/to/img.jpg "download"
