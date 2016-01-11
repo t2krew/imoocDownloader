@@ -23,7 +23,7 @@ npm install
 'use strict';
 
 let Crawler = require('./lib/main');
-let config = require('./config);
+let config = require('./config');
 
 
 let worker = new Crawler({
