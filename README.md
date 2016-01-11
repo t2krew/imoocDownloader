@@ -15,16 +15,21 @@ cd imoocDownloader
 npm install
 ```
 
+配置好config文件，执行 `node index.js`即可。
+
+
 ###例子
 ```javascript
 'use strict';
 
 let Crawler = require('./lib/main');
+let config = require('./config);
+
 
 let worker = new Crawler({
-    timeout : 4,          //second
-	videoDir : './video',
-    target : [552,556,21,441,11]  
+    timeout : config.timeout,          
+	videoDir : config.videoDir,
+    target : config.target  
 });
 
 
