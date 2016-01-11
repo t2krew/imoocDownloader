@@ -15,7 +15,7 @@ cd imoocDownloader
 npm install
 ```
 
-配置好config文件，执行 `node index.js`即可。
+配置好config文件，执行 `node index.js`即可。 
 
 
 ###例子
