@@ -30,7 +30,7 @@ module.exports = {
 }
 ```
 
-### 用法
+### Usage
 ####Class: Crawler
 
 #####new Crawler(object)
