@@ -20,20 +20,14 @@ npm install
 
 ###例子
 ```javascript
-'use strict';
+'use strict'
 
-let Crawler = require('./lib/main');
-let config = require('./config');
-
-
-let worker = new Crawler({
-    timeout : config.timeout,          
-	videoDir : config.videoDir,
-    target : config.target  
-});
-
-
-worker.run();
+module.exports = {
+    rootDir : __dirname,
+    timeout : 10,
+    videoDir : './video',
+    target : [552,556,21,441,11]
+}
 ```
 
 ### 用法
