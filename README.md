@@ -48,7 +48,7 @@ module.exports = {
  
 ###命令行用法
 ```shell
-node index.js <command> arguments
+node index.js <command> <arguments>
 ```
 
 *    command
