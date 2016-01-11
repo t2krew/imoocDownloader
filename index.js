@@ -61,7 +61,7 @@ if(args.length <=2 ){
 		if(!cmds[3]){
 			console.log('缺少课程ID');
 		}else{
-			let targetId = cmds[3];
+			let targetId = Array.prototype.slice.call(args,3);
 			if(+targetId == NaN){
 				console.log('课程ID格式有误，应该为数字格式');
 			}
