@@ -15,10 +15,9 @@ cd imoocDownloader
 npm install
 ```
 
-配置好config文件，执行 `node index.js`即可。 
 
 
-###例子
+###Usage
 ```javascript
 'use strict'
 
@@ -30,21 +29,7 @@ module.exports = {
 }
 ```
 
-### Usage
-####Class: Crawler
-
-#####new Crawler(object)
-
-*    object 配置信息
-
-    *    timeout    超时时间 (分钟)
-    *    videoDir   视频下载目录 (支持绝对路径、相对路径)
-    *    target     慕课网课程id数组（支持单个id字符串格式）
-    
- 
- 
- 
- 
+#####配置好config文件，执行 `node index.js`即可。 
  
 ###命令行用法
 ```shell
