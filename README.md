@@ -43,7 +43,7 @@ node index.js <command> <arguments>
     
 ####example
 ```shell
-node index.js --search node
+node index.js --search mongodb
 ```
 ![search][1]
 
