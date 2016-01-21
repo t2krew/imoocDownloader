@@ -46,7 +46,7 @@ node index.js <command> <arguments>
     
 ####example
 ```shell
-node index.js --search mongodb
+node index.js --search node
 ```
 ![search][1]
 
@@ -59,8 +59,10 @@ node index.js --list 434
 node index.js --download 434
 ```
 ![download][3]
+![result][3]
 
 
 [1]: https://github.com/webbought/imoocDownloader/blob/master/img/1.png "search"
 [2]: https://github.com/webbought/imoocDownloader/blob/master/img/2.png "list"
 [3]: https://github.com/webbought/imoocDownloader/blob/master/img/3.png "download"
+[4]: https://github.com/webbought/imoocDownloader/blob/master/img/4.png "result"
