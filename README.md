@@ -59,10 +59,17 @@ node index.js --list 434
 node index.js --download 434
 ```
 ![download][3]
-![result][4]
+课程目录
+![course][4]
+章节目录
+![chapter][5]
+视频目录
+![video][6]
 
 
 [1]: https://github.com/webbought/imoocDownloader/blob/master/img/1.png "search"
 [2]: https://github.com/webbought/imoocDownloader/blob/master/img/2.png "list"
 [3]: https://github.com/webbought/imoocDownloader/blob/master/img/3.png "download"
-[4]: https://github.com/webbought/imoocDownloader/blob/master/img/4.png "result"
+[4]: https://github.com/webbought/imoocDownloader/blob/master/img/4.png "course"
+[5]: https://github.com/webbought/imoocDownloader/blob/master/img/5.png "chapter"
+[6]: https://github.com/webbought/imoocDownloader/blob/master/img/6.png "video"
