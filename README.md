@@ -59,7 +59,7 @@ node index.js --list 434
 node index.js --download 434
 ```
 ![download][3]
-![result][3]
+![result][4]
 
 
 [1]: https://github.com/webbought/imoocDownloader/blob/master/img/1.png "search"
