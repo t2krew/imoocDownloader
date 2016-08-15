@@ -12,7 +12,7 @@ let Crawler = require('./lib/main'),
 		'download'
 	];
 
-let searchUrl = 'http://www.imooc.com/index/searchcourse?words=';
+let searchUrl = 'http://www.imooc.com/search/course?words=';
 let chapterUrl = 'http://www.imooc.com/learn/';
 
 if(args.length <=2 ){
