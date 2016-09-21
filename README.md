@@ -1,5 +1,5 @@
 # imoocDownloader
-[![Build Status](https://travis-ci.org/webbought/imoocDownloader.svg?branch=v1.1.0)](https://travis-ci.org/webbought/imoocDownloader)    [![codecov](https://codecov.io/gh/webbought/imoocDownloader/branch/v1.1.0/graph/badge.svg)](https://codecov.io/gh/webbought/imoocDownloader)
+[![Build Status](https://travis-ci.org/webbought/imoocDownloader.svg?branch=v1.1.0)](https://travis-ci.org/webbought/imoocDownloader) 
 
 ###简介
 
@@ -23,10 +23,8 @@ npm install
 'use strict'
 
 module.exports = {
-    rootDir : __dirname,
-    timeout : 10,
     videoDir : './video',
-    target : [552,556,21,441,11]
+    targets : [552,556,21,441,11]
 }
 ```
 
@@ -47,17 +45,17 @@ node index.js <command> <arguments>
     
 ####example
 ```shell
-node index.js --search node
+node index.js --search mongodb
 ```
 ![search][1]
 
 ```shell
-node index.js --list 434
+node index.js --list 578
 ```
 ![list][2]
 
 ```shell
-node index.js --download 434
+node index.js --download 578
 ```
 ![download][3]
 ```
