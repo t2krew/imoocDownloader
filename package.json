@@ -1,26 +1,44 @@
 {
-  "name": "imoocDownloader",
-  "version": "1.0.0",
-  "description": "download the video form imooc.com",
+  "name": "imoocdownloader",
+  "version": "1.1.0",
+  "description": "慕课网视频、资源下载工具。",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "./node_modules/.bin/istanbul cover ./node_modules/mocha/bin/_mocha -- -t 10000 test/*.js --report lcovonly -R spec && ./node_modules/.bin/codecov -t dd882977-b9ed-49df-ada7-ff157884fb5b",
+    "eslint": "./node_modules/.bin/eslint src/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/webbought/imoocDownloader.git"
   },
   "keywords": [
-    "spider",
     "imooc",
-    "video",
-    "stream"
+    "download",
+    "spider",
+    "nodejs"
   ],
-  "repository": "https://github.com/webbought/imoocDownloader.git",
   "author": "krew",
-  "license": "ISC",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/webbought/imoocDownloader/issues"
+  },
+  "homepage": "https://github.com/webbought/imoocDownloader#readme",
   "dependencies": {
-    "cheerio": "^0.19.0",
+    "cheerio": "^0.22.0",
     "colors": "^1.1.2",
-    "debug": "^2.2.0",
-    "lodash": "^3.10.1",
-    "request": "^2.67.0",
-    "urlencode": "^1.1.0"
+    "commander": "^2.9.0",
+    "iconv-lite": "^0.4.13",
+    "log4js": "^0.6.38",
+    "mkdirp": "^0.5.1",
+    "ramda": "^0.22.1",
+    "request": "^2.74.0"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "codecov": "^1.0.1",
+    "eslint": "^3.3.1",
+    "eslint-config-google": "^0.6.0",
+    "istanbul": "^0.4.5",
+    "mocha": "^3.0.2"
   }
 }
