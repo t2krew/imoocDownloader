@@ -1,77 +1,51 @@
 'use strict';
 
-let Crawler = require('./lib/main'),
-	config = require('./config'),
-	colors = require('colors'),
-	path = require('path'),
-	urlencode = require('urlencode'),
-	args = process.argv,
-	cmdList = [
-		'list',
-		'search',
-		'download'
-	];
+process.on('uncaughtException', (err) => {
+    logger.error(err);
+});
 
-let searchUrl = 'http://www.imooc.com/search/course?words=';
-let chapterUrl = 'http://www.imooc.com/learn/';
+var logger = require('./lib/logger');
+var display = require('./lib/display');
+var Imooc = require('./imooc');
+var config = require('./conf/config.default');
 
-if(args.length <=2 ){
-	let worker = new Crawler({
-	    timeout : config.timeout,
-	    videoDir : config.videoDir,
-	    target : config.target
-	});
+let cmds = ['search','s','list','l','download','d'];
 
-	worker.run();
-}else{
-	let cmds = Array.prototype.slice.apply(args);
-	let cmd = cmds[2].replace(/^\-+/g,'');
-	if(cmdList.indexOf(cmd) < 0){
-		console.log('指令 ' + cmd + ' 不存在');
-		console.log('可用的指令有:' + colors.bgGreen(colors.red('[ ' + cmdList.map(e => '--' + e).join(' , ') + ' ]\n')));
-	}
-	if(cmd == 'search'){
-		if(!cmds[3]){
-			console.log('缺少关键词参数');
-		}else{
-			let searchLink = searchUrl + urlencode(cmds[3]);
-			console.log(colors.magenta('Searching course list about: " ' + cmds[3] + ' "...'));
-			let worker = new Crawler({
-			    timeout : config.timeout
-			});
-			worker.showSearchList(searchLink);
-		}
-	}else if(cmd == 'list'){
-		if(!cmds[3]){
-			console.log('缺少课程ID');
-		}else{
-			let targetId = cmds[3];
-			if(+targetId == NaN){
-				console.log('课程ID格式有误，应该为数字格式');
-			}
-			let chapterLink = chapterUrl + cmds[3];
-			console.log(colors.magenta('Reading course list from: ' + chapterLink + '...'));
-			let worker = new Crawler({
-			    timeout : config.timeout
-			});
-			worker.showItems(chapterLink);
+let args = process.argv.slice(2);
 
-		}
-	}else if(cmd == 'download'){
-		if(!cmds[3]){
-			console.log('缺少课程ID');
-		}else{
-			let targetId = Array.prototype.slice.call(args,3);
-			if(+targetId == NaN){
-				console.log('课程ID格式有误，应该为数字格式');
-			}
-			let worker = new Crawler({
-			    timeout : config.timeout,
-			    videoDir : config.videoDir,
-			    target : targetId
-			});
+let imooc = new Imooc(config);
 
-			worker.run();
-		}
-	}
+if (args.length > 0) {
+  let cmd = args[0];
+  let param = args[1];
+  if (cmds.indexOf(cmd) < 0) {
+    console.log(`指令 --${cmd} 不存在`.red);
+    console.log(`可用的指令有:`.green,`[ ${ cmds.map(e => '--' + e).join(' , ')} ]`.red);
+  }
+  if (!param) {
+    console.log('缺少参数值'.red);
+  }
+  if (cmd == 'search' || cmd == 's') {
+    imooc.getCourses(param, function(err, data) {
+      if (err) {
+        logger.error(err);
+      } else {
+        display.viewCourses(data);
+      }
+    })
+  } else if (cmd == 'list' || cmd == 'l') {
+    imooc.getLessons(param, function(err, data) {
+      if (err) {
+        logger.error(err);
+      } else {
+        display.viewLessons(data);
+      }
+    })
+  } else if (cmd == 'download' || cmd == 'd') {
+    param = param.split(',');
+    imooc.setTarget(param);
+    imooc.loopCourse();
+  }
+} else {
+  imooc.loopCourse();
 }
