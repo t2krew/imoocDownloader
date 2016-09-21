@@ -142,7 +142,7 @@ imoocDownloader.prototype.download = function(item, callback) {
         if (err) {
           callback && callback(err);
         } else if (response) {
-          console.log(`正在下载${item.title}`.red);
+          console.log(`\n正在下载${item.title}`.red);
         } else if (progress) {
           display.download(progress);
         } else if (end) {
