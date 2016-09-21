@@ -1,4 +1,5 @@
 # imoocDownloader
+[![Build Status](https://travis-ci.org/webbought/imoocDownloader.svg?branch=v1.1.0)](https://travis-ci.org/webbought/imoocDownloader)    [![codecov](https://codecov.io/gh/webbought/imoocDownloader/branch/v1.1.0/graph/badge.svg)](https://codecov.io/gh/webbought/imoocDownloader)
 
 ###简介
 
@@ -31,7 +32,7 @@ module.exports = {
 
 #####配置好config文件，执行 `node index.js`即可。 
  
-###命令行用法
+###指令模式
 ```shell
 node index.js <command> <arguments>
 ```
