@@ -3,11 +3,12 @@
 let fs = require('fs');
 let path = require('path');
 let mkdirp = require('mkdirp');
-let conf = require('./conf/config.local');
+let util = require('./lib/util');
 let urllib = require('./lib/urllib');
+let display = require('./lib/display');
+let conf = require('./conf/config.local');
 let htmlParser = require('./lib/htmlParser');
 let downloader = require('./lib/downLoader');
-let display = require('./lib/display');
 
 const mediainfoURI = `http://www.imooc.com/course/ajaxmediainfo/?mid=`;
 
@@ -82,7 +83,11 @@ imoocDownloader.prototype.loopCourse = function(callback) {
       if (err) {
         callback && callback(err);
       } else {
+        ctx.courseTitle = data.title;
+        let dest = path.join(ctx.videoDir, ctx.courseTitle);
+        mkdirp.sync(dest);
         display.downLoadDetail(data);
+        util.genCourseContents(dest, data);
         ctx.loopChapter(target, loopChapterCb(callback));
       }
     })
@@ -97,9 +102,6 @@ imoocDownloader.prototype.loopCourse = function(callback) {
 imoocDownloader.prototype.loopChapter = function(courseId, callback) {
   let ctx = this;
   let items = this.course[courseId]['items'];
-  if (!this.courseTitle) {
-    this.courseTitle = this.course[courseId]['title'];
-  }
   if (items.length > 0) {
     let item = items.shift();
     if (item.type === 'chapter') {
