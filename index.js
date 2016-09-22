@@ -9,12 +9,14 @@ var display = require('./lib/display');
 var Imooc = require('./imooc');
 var config = require('./conf/config.default');
 
+//可用指令
 let cmds = ['search','s','list','l','download','d'];
 
 let args = process.argv.slice(2);
 
 let imooc = new Imooc(config);
 
+//run commond mode
 if (args.length > 0) {
   let cmd = args[0];
   let param = args[1];
@@ -30,6 +32,7 @@ if (args.length > 0) {
       if (err) {
         logger.error(err);
       } else {
+        //屏幕打印相关课程列表
         display.viewCourses(data);
       }
     })
@@ -38,6 +41,7 @@ if (args.length > 0) {
       if (err) {
         logger.error(err);
       } else {
+        //屏幕打印课程详细章节
         display.viewLessons(data);
       }
     })
@@ -47,5 +51,6 @@ if (args.length > 0) {
     imooc.loopCourse();
   }
 } else {
+  // run default mode
   imooc.loopCourse();
 }
