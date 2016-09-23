@@ -18,10 +18,10 @@ let imooc = new Imooc(config);
 
 //run commond mode
 if (args.length > 0) {
-  let cmd = args[0];
+  let cmd = args[0].replace(/^-+/,'');
   let param = args[1];
   if (cmds.indexOf(cmd) < 0) {
-    console.log(`指令 --${cmd} 不存在`.red);
+    console.log(`指令 ${cmd} 不存在`.red);
     console.log(`可用的指令有:`.green,`[ ${ cmds.map(e => '--' + e).join(' , ')} ]`.red);
   }
   if (!param) {
