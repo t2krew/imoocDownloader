@@ -36,11 +36,11 @@ node index.js <command> <arguments>
 ```
 
 *    command
-    *    --search 查找 后面必须有所要查找的关键词参数
+    *    --s,--search 查找 后面必须有所要查找的关键词参数
         *    arguments {String} search word
-    *    --list 课程列表  后面必须有所要查看的课程ID
+    *    --l,--list 课程列表  后面必须有所要查看的课程ID
         *    arguments {Number} course id
-    *    --download 下载  后面必须有所要下载的课程ID
+    *    --d,--download 下载  后面必须有所要下载的课程ID
         *    arguments {Number} course id
     
 ####example
