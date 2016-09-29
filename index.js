@@ -48,9 +48,17 @@ if (args.length > 0) {
   } else if (cmd == 'download' || cmd == 'd') {
     param = param.split(',');
     imooc.setTarget(param);
-    imooc.loopCourse();
+    imooc.loopCourse(fail);
   }
 } else {
   // run default mode
-  imooc.loopCourse();
+  imooc.loopCourse(fail);
+}
+
+/**
+ * fail callback
+ * @param  {Error} err 异常对象
+ */
+function fail(err) {
+  if (err) logger.error(err);
 }
