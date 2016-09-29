@@ -120,7 +120,7 @@ imoocDownloader.prototype.loopCourse = function(callback) {
         display.downLoadDetail(data);
         //生成课程目录文本
         util.genCourseContents(dest, data);
-        ctx.loopChapter(target, loopChapterCb(callback));
+        ctx.loopChapter(target, callback);
       }
     })
   } else {
@@ -245,19 +245,6 @@ imoocDownloader.prototype.getVideoURI = function(lessonId, callback) {
  */
 imoocDownloader.prototype.setTarget = function(targets){
   this.targets = targets;
-}
-
-/**
- * 遍历章节回调函数
- * @param  {Function} cb 回调函数
- * @return {Function}      
- */
-function loopChapterCb(cb) {
-  return function(err) {
-    if (err) {
-      cb && cb(err);
-    }
-  }
 }
 
 
