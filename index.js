@@ -1,7 +1,7 @@
 'use strict';
 
 process.on('uncaughtException', (err) => {
-    logger.error(err);
+    console.error(err);
 });
 
 var logger = require('./lib/logger');
