@@ -1,7 +1,7 @@
 # imoocDownloader
 [![Build Status](https://travis-ci.org/webbought/imoocDownloader.svg?branch=v1.1.0)](https://travis-ci.org/webbought/imoocDownloader) 
 
-`由于慕课网不定期更改网站结构以及视频播放策略，所以本项目已不再维护`
+`由于慕课网不定期更改网页结构以及视频播放策略，所以本项目已不再维护`
 
 ###简介
 
