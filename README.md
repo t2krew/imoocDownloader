@@ -1,14 +1,12 @@
 # imoocDownloader
 [![Build Status](https://travis-ci.org/webbought/imoocDownloader.svg?branch=v1.1.0)](https://travis-ci.org/webbought/imoocDownloader) 
 
-`由于慕课网不定期更改网页结构以及视频播放策略，所以本项目已不再维护`
+### 简介
 
-###简介
-
-imoocDownloader 用来爬取慕课网上指定课程id视频
+imoocDownloader 用来爬取慕课网课程视频
 
 
-###安装
+### 安装
 
 ```shell
 git clone https://github.com/webbought/imoocDownloader.git
@@ -20,7 +18,7 @@ npm install
 
 
 
-###Usage
+### Usage
 ```javascript
 'use strict'
 
@@ -30,22 +28,22 @@ module.exports = {
 }
 ```
 
-#####配置好config文件，执行 `node index.js`即可。 
+##### 配置好config文件，执行 `node index.js`即可。 
  
-###指令模式
+### 指令模式
 ```shell
 node index.js <command> <arguments>
-```
 
-*    command
-    *    --s,--search 查找 后面必须有所要查找的关键词参数
-        *    arguments {String} search word
-    *    --l,--list 课程列表  后面必须有所要查看的课程ID
-        *    arguments {Number} course id
-    *    --d,--download 下载  后面必须有所要下载的课程ID
-        *    arguments {Number} course id
+Options:
+
+-h, --help          output usage information
+-V, --version       output the version number
+-s, --search <n>    Search course specified by keywords
+-l, --list <n>      Show the Chapters and Lessons by course Id
+-d, --download <n>  Download the Course By course Id
+```
     
-####example
+#### example
 ```shell
 node index.js --search mongodb
 ```
@@ -59,6 +57,13 @@ node index.js --list 578
 ```shell
 node index.js --download 578
 ```
+
+or
+
+```shell
+node index.js --download 75,578
+```
+
 ![download][3]
 ```
 课程目录

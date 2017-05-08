@@ -19,6 +19,11 @@ program
   .option('-d, --download <n>', 'Download the Course By course Id', download)
   .parse(process.argv);
 
+if (!program.search &&
+    !program.list &&
+    !program.download) {
+      imooc.loopCourse(fail);
+    }
 
 function search(keyword) {
   imooc.getCourses(keyword, function(err, courses) {
