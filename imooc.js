@@ -43,21 +43,19 @@ function imoocDownloader(opts) {
 imoocDownloader.prototype.getCourses = function(keyword, callback) {
   let ctx = this;
   let target = `${conf.URI.SEARCH_COURSE + keyword}`;
-  //抓取目标搜索页面dom
   urllib(target, function(err, html) {
     if (err) {
-      callback && callback(err, null);
-      return;
-    }
-    //解析dom
-    let dom = new htmlParser(html);
-    let data = {};
-    data['keyword'] = keyword;
-    data['title'] = dom.getTitle();
-    data['items'] = dom.getCourseList();
+      callback && callback(err);
+    } else {
+      let dom = new htmlParser(html);
+      let data = {};
+      data['keyword'] = keyword;
+      data['title'] = dom.getTitle();
+      data['items'] = dom.getCourseList();
 
-    ctx.courseList = data;
-    callback && callback(null, data);
+      ctx.courseList = data;
+      callback && callback(null, data);
+    }
   })
 
 }
@@ -70,6 +68,7 @@ imoocDownloader.prototype.getCourses = function(keyword, callback) {
 imoocDownloader.prototype.getLessons = function(courseId, callback) {
   let ctx = this;
   let target = `${conf.URI.SEARCH_LESSON + courseId}`;
+  console.log(target)
   //抓取目标课程页面dom
   urllib(target, function(err, html) {
     if (err) {

@@ -27,11 +27,11 @@
     "cheerio": "^0.22.0",
     "colors": "^1.1.2",
     "commander": "^2.9.0",
-    "iconv-lite": "^0.4.13",
+    "iconv-lite": "^0.4.17",
     "log4js": "^0.6.38",
     "mkdirp": "^0.5.1",
-    "ramda": "^0.22.1",
-    "request": "^2.74.0"
+    "ramda": "^0.23.0",
+    "request": "^2.81.0"
   },
   "devDependencies": {
     "chai": "^3.5.0",
