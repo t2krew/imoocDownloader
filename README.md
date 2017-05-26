@@ -1,6 +1,8 @@
 # imoocDownloader
 [![Build Status](https://travis-ci.org/webbought/imoocDownloader.svg?branch=v1.1.0)](https://travis-ci.org/webbought/imoocDownloader) 
 
+`由于慕课网现在的视频播放机制已经跟写项目时有所改变，所以部分视频会无法下载，该项目也不再维护`
+
 ### 简介
 
 imoocDownloader 用来爬取慕课网课程视频
